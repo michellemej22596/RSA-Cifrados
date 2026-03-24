@@ -29,7 +29,7 @@ Este proyecto implementa un sistema de cifrado híbrido RSA-OAEP + AES-256-GCM p
 
 ```bash
 # Clonar el repositorio
-git clone <url-del-repositorio>
+git clone https://github.com/michellemej22596/RSA-Cifrados.git
 cd RSA-Cifrados
 
 # Instalar dependencias
@@ -46,11 +46,15 @@ Esto generará:
 - `private_key.pem` - Clave privada (protegida con passphrase "lab04uvg")
 - `public_key.pem` - Clave pública
 
+![alt text](image.png)
+
 #### 2. Cifrado/Descifrado directo con RSA-OAEP
 ```bash
 python rsa_OAEP.py
 ```
 Este script demuestra el cifrado y descifrado directo de mensajes pequeños.
+
+![alt text](image-1.png)
 
 #### 3. Cifrado híbrido RSA-OAEP + AES-GCM
 ```bash
@@ -58,6 +62,7 @@ python rsa_AES_GCM.py
 ```
 Este script implementa el cifrado híbrido para documentos de cualquier tamaño.
 
+![alt text](image-2.png)
 ---
 
 ## Ejemplos de Ejecución
@@ -108,7 +113,7 @@ Tamaño cifrado: 1048862 bytes
 
 **Respuesta:**
 
-No se debe cifrar el documento directamente con RSA por varias razones importantes:
+No se debe cifrar el documento directamente con RSA por varias razonesimportantes, ejemplo:
 
 1. **Limitación de tamaño**: RSA solo puede cifrar datos de un tamaño máximo igual a `(tamaño_clave / 8) - padding`. Por ejemplo, con una clave de 2048 bits y OAEP con SHA-256, el máximo es aproximadamente 190 bytes. Los documentos legales suelen ser mucho más grandes.
 
@@ -124,7 +129,7 @@ No se debe cifrar el documento directamente con RSA por varias razones important
 
 **Respuesta:**
 
-Un archivo `.pem` (Privacy Enhanced Mail) contiene datos criptográficos codificados en Base64 con encabezados específicos. Al abrir `public_key.pem` con un editor de texto, se observa la siguiente estructura:
+Un archivo `.pem` (Privacy Enhanced Mail) contiene datos criptográficos codificados en Base64 con encabezados específicos. Al abrir `public_key.pem` con un editor de texto, se observan caractéres "extraños" con la siguiente estructura:
 
 ```
 -----BEGIN PUBLIC KEY-----
@@ -204,3 +209,4 @@ RSA-Cifrados/
 - [RFC 8017 — PKCS#1 v2.2 (OAEP)](https://www.rfc-editor.org/rfc/rfc8017)
 - [Python secrets module](https://docs.python.org/3/library/secrets.html)
 - Presentaciones de clase: https://locano-uvg.github.io/cifrados-26/
+- Open AI. modelo ChatGPT versión vigente el 23 de marzo de 2026
